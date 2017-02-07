@@ -1,0 +1,33 @@
+body {
+  
+    background-color: blue;
+    background-image: url(images/35968989-summer-pictures.jpg);
+   
+    background-position: center;
+    background-repeat: repeat-y;
+    color: aliceblue;
+}
+
+.main {
+    width: 80%;
+    margin: auto;
+}
+.color{
+    color: black;
+}
+.upper{
+    text-transform: uppercase;
+}
+img{
+    opacity: 0.5;
+}
+img:hover{
+    opacity: 1;
+}
+div{
+    
+    padding: 40px;
+}
+input:focus {
+    background-color: yellow;
+}
