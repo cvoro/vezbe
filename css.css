@@ -40,8 +40,12 @@ li {
 color: black;
 }
 #static{
-    position: fixed;
+    
    border: 5px solid black;
     height: 400px;
     width: 400px;
+    display: inline-block;
+}
+ui-view{
+    display: inline-block;
 }

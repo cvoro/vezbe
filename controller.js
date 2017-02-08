@@ -60,6 +60,11 @@ function getGitUserByUsername(username){
     vm.myFunc = function() {
         vm.showMe = !vm.showMe;
     }
+   
+    vm.prikazi = false;
+    vm.switch = function(){
+        vm.prikazi = !vm.prikazi;
+    }
     
 }
 })();
