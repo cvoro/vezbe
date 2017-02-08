@@ -20,14 +20,28 @@ body {
 }
 img{
     opacity: 0.5;
+    width: 390px;
+    height: 390px;
 }
 img:hover{
     opacity: 1;
 }
+/*
 div{
     
     padding: 40px;
 }
+*/
+/*
 input:focus {
     background-color: yellow;
+}*/
+li {
+color: black;
+}
+#static{
+    position: fixed;
+   border: 5px solid black;
+    height: 400px;
+    width: 400px;
 }

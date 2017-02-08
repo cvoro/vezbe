@@ -8,8 +8,8 @@ servis.$inject = ['$http'];
 function servis($http){
 	return{
 //        nekaimena: nekaimena,
-    getPod: getPod,
-        getPodPratioci: getPodPratioci
+    getGitUserByUsername: getGitUserByUsername,
+        getGitFollower: getGitFollower
 };
 //	function nekaimena(username){
 //	return $http.get("https://api.github.com/users/"+username).  .then(getImena).catch(getNoImena);
@@ -23,7 +23,7 @@ function servis($http){
 //            };
 //}
 //}
-    function getPod(username){
+    function getGitUserByUsername(username){
     return $http.get("https://api.github.com/users/"+username).then(getImena).catch(getNoImena);
             
             function getImena(response){
@@ -34,7 +34,7 @@ function servis($http){
                 return response;
             };
 }
-    function getPodPratioci(followers){
+    function getGitFollower(followers){
         return $http.get(followers).then(getImena).catch(getNoImena);
             
             function getImena(response){

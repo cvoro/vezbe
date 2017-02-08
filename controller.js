@@ -8,8 +8,8 @@ ctrl.$inject = ['servis'];
 function ctrl(servis){
 //
 var vm = this;
-    vm.getPod = getPod;
-   vm.getPodPratioci = getPodPratioci;
+    vm.getGitUserByUsername = getGitUserByUsername;
+   vm.getGitFollower = getGitFollower;
 //
 //	activate();
 //	 function activate(){
@@ -31,26 +31,36 @@ activate();
 console.log("duvaj ga")
 // 	.then(function(){});
 	 }
-function getPod(username){
+function getGitUserByUsername(username){
 
     console.log("duvaj ga opet")
-    return servis.getPod(username).then(function(response){
+    return servis.getGitUserByUsername(username).then(function(response){
         console.log(response.data)
-        vm.data = response.data;
-        return vm.data;
+        vm.gituser = response.data;
+        return vm.gituser;
     });
 }
-    function getPodPratioci(){
+    
+    function getGitFollower(){
         console.log("pusi ga bre")
-        return servis.getPodPratioci(vm.data.followers_url).then(function(response){
-            console.log(response.data)
-//                        console.log(response)
-
-            vm.podaci = response.data;
-            return vm.podaci;
+        return servis.getGitFollower(vm.gituser.followers_url).then(function(response){
+            if(response.status == 200){
+                console.log(response.data)
+            vm.gitfollower = response.data;
+            return vm.gitfollower;
+            }
+            else{
+              console.log("nema bre nema")
+            }
         });
         
     }
+  
+        vm.showMe = false;
+    vm.myFunc = function() {
+        vm.showMe = !vm.showMe;
+    }
+    
 }
 })();
 
