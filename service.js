@@ -30,7 +30,6 @@ function servis($http){
                 return response;
             }
             function getNoImena(response){
-                 console.log("nema tog kretena")
                 return response;
             };
 }
@@ -41,11 +40,8 @@ function servis($http){
                 return response;
             }
             function getNoImena(response){
-               
                 return response;
             };
-        
-        
     }
 }
 })();

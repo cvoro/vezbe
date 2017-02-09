@@ -1,9 +1,0 @@
-(function(){
-angular .module('myapp')
-	.controller('testCtrl', function($scope){
-
-
-	$scope.text = "neki tekst koji se menja";
-});
-
-

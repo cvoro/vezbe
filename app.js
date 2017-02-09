@@ -1,19 +1,25 @@
 (function(){
 	angular.module('myapp', ['ui.router'])
 	.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/pocetnaZaUi');
 
 		
 		$stateProvider
-			.state('slika',{
-			url: '/slika',
-            templateUrl: 'slika.html'
+			.state('gituser',{
+			url: '/gituser',
+            templateUrl: 'gituser.html'
         
             });
+//        $stateProvider
+//			.state('slika1',{
+//			url: '/slika1',
+//            templateUrl: 'slika1.html',
+//        
+//            });
         $stateProvider
-			.state('slika1',{
-			url: '/slika1',
-            templateUrl: 'slika1.html',
+			.state('pocetnaZaUi',{
+			url: '/pocetnaZaUi',
+            templateUrl: '/pocetnaZaUi.html',
         
             });
         
