@@ -1,0 +1,60 @@
+<!--
+
+<script> id="myForm
+function myFunction() {
+    document.getElementById("myForm").reset();
+}
+</script>
+-->
+   <div ng-controller="ctrl as vm">
+    <div class="inline">
+       <form class="navbar-form navbar-left">
+        <div class="form-group">
+         
+        <button ng-click="vm.getGitUserByUsername(username)" type="submit" class="btn btn-default">Pronadji</button>
+          <input ng-model="username" type="text" class="form-control" placeholder="Search">
+          <button ng-click="vm.getGitFollower(username)" class="btn btn-default">Pronadji pratioce</button>
+          Profil korisnika:<strong class="upper"> {{vm.gituser.login}}</strong>
+   <button ng-click="vm.myFunc()" type="submit" class="btn btn-default">Prikazi avatar</button>
+<!--  {{vm.gituser={}}}-->
+        </div>
+<!--        <input type="button" onclick="myFunction()" value="Reset form">-->
+      </form>
+     
+   
+    <h1 ng-show="vm.showErrorOnUser">{{vm.greska}}</h1> 
+<!--
+      <table>
+  <tr ng-repeat="x in vm.gitfollower | orderBy : 'login'">
+    <td>{{ x.login }}</td>
+    
+  </tr>
+</table>
+-->
+    
+    <br>
+   
+    <br>
+<!--
+     <div ng-show="vm.showMe" id="static">
+       <img ng-src="{{vm.gituser.avatar_url}}">
+   </div>
+-->
+   
+   </div>
+   <br>
+<!--   ng-if="vm.showErrorOnTable"-->
+   <br>
+     <div ng-show="vm.showMe" id="static">
+       <img ng-src="{{vm.gituser.avatar_url}}">
+   </div> <table >
+  <tr ng-repeat="x in vm.gitfollower | orderBy : 'login'">
+    <td><a ng-click="vm.getGitUserByUsername(x.login)" ng-model="x.login">{{ x.login }}</a></td>
+    
+
+    
+  </tr>
+</table>
+    
+    
+</div>

@@ -1,9 +1,12 @@
-//(function(){
+(function(){
 angular .module('myapp')
-	.controller('testCtrl', function($scope){
+	.controller('testCtrl', testCtrl);
+
+function testCtrl(){
     var vm = this;
 
 	vm.text = "Dobro dosli na pocetnu stranu!";
-});
 
+}
 
+})();

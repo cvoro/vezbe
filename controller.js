@@ -10,7 +10,8 @@ function ctrl(servis){
 var vm = this;
     vm.getGitUserByUsername = getGitUserByUsername;
    vm.getGitFollower = getGitFollower;
-    vm.showgreska = false;
+    vm.showErrorOnUser = false;
+    vm.showErrorOnTable = false;
 //
 //	activate();
 //	 function activate(){
@@ -36,13 +37,15 @@ function getGitUserByUsername(username){
     console.log("duvaj ga opet")
     return servis.getGitUserByUsername(username).then(function(response){
         if(response.status == 200){
-            vm.showgreska = false;
+            vm.showErrorOnUser = false;
              console.log(response.data)
         vm.gituser = response.data;
         return vm.gituser;
+             vm.showErrorOnTable = false;
         }
         else{
-            vm.showgreska = true;
+            vm.showErrorOnTable = true;
+            vm.showErrorOnUser = true;
                             vm.greska = "Nema tog Git korisnika!";
                 return vm.greska;
             console.log("nema ga stvarno")
@@ -70,6 +73,7 @@ function getGitUserByUsername(username){
     vm.switch = function(){
         vm.prikazi = !vm.prikazi;
     } 
+    
 }
 })();
 
