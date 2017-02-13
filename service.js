@@ -9,7 +9,8 @@ function servis($http){
 	return{
 //        nekaimena: nekaimena,
     getGitUserByUsername: getGitUserByUsername,
-        getGitFollower: getGitFollower
+        getGitFollower: getGitFollower,
+        getGitUserRepos: getGitUserRepos
 };
 //	function nekaimena(username){
 //	return $http.get("https://api.github.com/users/"+username).  .then(getImena).catch(getNoImena);
@@ -40,6 +41,16 @@ function servis($http){
                 return response;
             }
             function getNoImena(response){
+                return response;
+            };
+    }
+    function getGitUserRepos(repos){
+        return $http.get(repos).then(getRepos).catch(getNoRepos);
+            
+            function getRepos(response){
+                return response;
+            }
+            function getNoRepos(response){
                 return response;
             };
     }

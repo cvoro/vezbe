@@ -10,6 +10,7 @@ function ctrl(servis){
 var vm = this;
     vm.getGitUserByUsername = getGitUserByUsername;
    vm.getGitFollower = getGitFollower;
+    vm.getGitUserRepos = getGitUserRepos;
     vm.showErrorOnUser = false;
     vm.showErrorOnTable = false;
 //
@@ -34,6 +35,9 @@ console.log("duvaj ga")
 // 	.then(function(){});
 	 }
 function getGitUserByUsername(username){
+    vm.gitrepos={};
+    vm.gituser={};
+     vm.gitfollower={};
     console.log("duvaj ga opet")
     return servis.getGitUserByUsername(username).then(function(response){
         if(response.status == 200){
@@ -42,6 +46,7 @@ function getGitUserByUsername(username){
         vm.gituser = response.data;
         return vm.gituser;
              vm.showErrorOnTable = false;
+            
         }
         else{
             vm.showErrorOnTable = true;
@@ -53,12 +58,29 @@ function getGitUserByUsername(username){
     });
 }
         function getGitFollower(){
+//            vm.gitfollower={};
+//            vm.gitrepos={};
         console.log("pusi ga bre")
         return servis.getGitFollower(vm.gituser.followers_url).then(function(response){
             if(response.status == 200){
                 console.log(response.data)
             vm.gitfollower = response.data;
             return vm.gitfollower;
+                
+            }
+            else{
+            console.log("nema ga stvarno")
+            }
+        }); 
+    }
+     function getGitUserRepos(){
+//         vm.gitrepos={};
+        console.log("pusi ga bre")
+        return servis.getGitUserRepos(vm.gituser.repos_url).then(function(response){
+            if(response.status == 200){
+                console.log(response.data)
+            vm.gitrepos = response.data;
+            return vm.gitrepos;
             }
             else{
             console.log("nema ga stvarno")
@@ -72,6 +94,10 @@ function getGitUserByUsername(username){
     vm.prikazi = false;
     vm.switch = function(){
         vm.prikazi = !vm.prikazi;
+    } 
+    vm.showtable = false;
+    vm.Stable = function(){
+        vm.showtable = !vm.showtable;
     } 
     
 }
