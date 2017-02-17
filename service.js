@@ -18,14 +18,16 @@ function servis($http){
 //            function getImena(response){
 //                return response;
 //            }
-//            
+    
+//            https://api.github.com/users/
+    
 //            function getNoImena(response){
 //                return response;
-//            };
+//            };http://demo0561392.mockable.io/rbacevic
 //}
 //}
     function getGitUserByUsername(username){
-    return $http.get("https://api.github.com/users/"+username).then(getImena).catch(getNoImena);
+    return $http.get("http://demo0561392.mockable.io/"+username).then(getImena).catch(getNoImena);
             
             function getImena(response){
                 return response;
